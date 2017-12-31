@@ -1,2 +1,2 @@
 # omelo-nickname
-game random nickname
+game random nickname, now support chiness and vietam.
