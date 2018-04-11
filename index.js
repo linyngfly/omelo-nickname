@@ -1,24 +1,35 @@
 const head_url = require('./res/head_url');
 
+const LAN = {
+    chinesse: 'chinese',
+    vietnam: 'vietnam'
+};
+
+const SEX = {
+    male: 0,
+    female: 1
+};
+
+
 class GenNickname {
-    constructor(lan = GenNickname.lan.chinesse) {
+    constructor(lan = LAN.chinesse) {
         this._data = null;
         this._initData(lan);
     }
 
     setLan(lan) {
         if (GenNickname.lan[lan] == null) {
-            throw 'set lan err'
+            throw 'set lan err';
         }
         this._initData(lan);
     }
 
     gen_boy() {
-        return this._genInfo(GenNickname.sex.male);
+        return this._genInfo(SEX.male);
     }
 
     gen_girl() {
-        return this._genInfo(GenNickname.sex.female);
+        return this._genInfo(SEX.female);
     }
 
     gen_random() {
@@ -44,7 +55,7 @@ class GenNickname {
             sex: sex,
             nickname: nickname,
             headUrl: headUrl
-        }
+        };
     }
 
     _random_int(begin, end) {
@@ -57,14 +68,8 @@ class GenNickname {
     }
 }
 
-GenNickname.lan = {
-    chinesse: 'chinese',
-    vietnam: 'vietnam'
-}
+const genNickname = new GenNickname();
+genNickname.lan = LAN;
+genNickname.sex = SEX;
 
-GenNickname.sex = {
-    male: 0,
-    female: 1
-}
-
-module.exports = new GenNickname();
+module.exports = genNickname;
