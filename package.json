@@ -1,6 +1,6 @@
 {
   "name": "omelo-nickname",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "genrate robot nickname,figure_url,sex",
   "main": "index.js",
   "scripts": {

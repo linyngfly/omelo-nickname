@@ -18,7 +18,7 @@ class GenNickname {
     }
 
     setLan(lan) {
-        if (GenNickname.lan[lan] == null) {
+        if (LAN[lan] == null) {
             throw 'set lan err';
         }
         this._initData(lan);
